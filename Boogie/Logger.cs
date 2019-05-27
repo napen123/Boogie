@@ -12,12 +12,5 @@ namespace Boogie
 
             return 1;
         }
-
-        public static int LogError(string message, params object[] args)
-        {
-            Console.WriteLine(message, args);
-
-            return 1;
-        }
     }
 }

@@ -49,7 +49,7 @@ namespace Boogie
             }
             catch (Exception e)
             {
-                return Logger.LogError("Error : Failed to convert the input file's encoding : " + e.Message);
+                return Logger.LogError("Failed to convert the input file's encoding : " + e.Message);
             }
         }
 
@@ -84,7 +84,7 @@ namespace Boogie
             }
             catch (Exception e)
             {
-                return Logger.LogError("Error : Failed to convert the input file's encoding : " + e.Message);
+                return Logger.LogError("Failed to convert the input file's encoding : " + e.Message);
             }
         }
 
@@ -96,17 +96,17 @@ namespace Boogie
             var inputEncoding = GetEncoding(inputEncodingValue);
 
             if (inputEncoding == null)
-                return Logger.LogError("Error : Invalid input encoding specified : " + inputEncodingValue);
+                return Logger.LogError("Invalid input encoding specified : " + inputEncodingValue);
 
             var outputEncoding = outputEncodingValue == null
                 ? Encoding.UTF8
                 : GetEncoding(outputEncodingValue);
 
             if (outputEncoding == null)
-                return Logger.LogError("Error : Invalid output encoding specified : " + outputEncodingValue);
+                return Logger.LogError("Invalid output encoding specified : " + outputEncodingValue);
 
             if (!File.Exists(inputFile))
-                return Logger.LogError("Error : Could not find input file : " + inputFile);
+                return Logger.LogError("Could not find input file : " + inputFile);
 
             switch (translateType)
             {
